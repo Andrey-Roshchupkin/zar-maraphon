@@ -1,4 +1,5 @@
 const player1 = {
+
   player: 1,
   name: "SCORPION",
   hp: 100,
@@ -9,9 +10,11 @@ const player1 = {
   },
 };
 const player2 = {
+
   player: 2,
   name: "KITANA",
   hp: 100,
+
   img: "http://reactmarathon-api.herokuapp.com/assets/kitana.gif",
   weapon: ["Steel fans", "Flying blade"],
   attack: function () {
@@ -20,6 +23,7 @@ const player2 = {
 };
 
 const $arena = document.querySelector(".arenas");
+
 const $randomButton = document.querySelector("button");
 
 function createElement(tag, className) {
@@ -42,10 +46,12 @@ function createPlayer({ player, name, hp, img, weapon, attack }) {
   $progressBar.appendChild($name);
   const $character = createElement("div", "character");
   const $img = createElement("img");
+
   $img.src = img;
   $character.appendChild($img);
   $player.appendChild($character);
   $player.appendChild($progressBar);
+
   return $player;
 }
 
@@ -88,3 +94,10 @@ $randomButton.addEventListener("click", function () {
 
 $arena.appendChild(createPlayer(player1));
 $arena.appendChild(createPlayer(player2));
+
+
+}
+
+createPlayer("player1", player1);
+createPlayer("player2", player2);
+
